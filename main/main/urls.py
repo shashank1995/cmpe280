@@ -16,8 +16,12 @@ Including another URLconf
 from django.conf.urls import url, include # Add include to the imports here
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
+from django.contrib.staticfiles.urls import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^', include('sportnews.urls')) # tell django to read urls.py in example app
-]
+    url(r'^', include('sportnews.urls')), # tell django to read urls.py in example app
+    url(r'^', include('sportscores.urls')),
+    url(r'^admin/', admin.site.urls)
+] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
