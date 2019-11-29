@@ -23,5 +23,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^', include('sportnews.urls')), # tell django to read urls.py in example app
     url(r'^', include('sportscores.urls')),
-    url(r'^admin/', admin.site.urls)
+    path('accounts/', include('accounts.urls')), # new
+    path('accounts/', include('django.contrib.auth.urls')),
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

@@ -9,4 +9,5 @@ urlpatterns = [
     url(r'^about/$', views.AboutPageView.as_view(), name='about'),
     url(r'^login/$', views.LoginPageView.as_view(), name='login'),
     path('', include('social_django.urls', namespace='social')),
+    url(r'^sportnews/$', views.sportnews, name='sportnews'),
 ]
