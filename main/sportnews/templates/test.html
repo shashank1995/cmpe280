@@ -20,14 +20,14 @@
 </head>
 <body>
 <div>
-  <h2>General news</h2>
+	<h2>General news</h2>
 {% for item in result %}
     <h4>{{ item.title }} </h4>
     <p>{{ item.body }}</p>
     <p><a href={{ item.url }}>Source</a></p>
 {% endfor %}
 
-  <h2>Team news</h2>
+	<h2>Team news</h2>
 {{ team_news }}
 </div>
 </body>

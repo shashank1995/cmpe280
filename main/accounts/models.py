@@ -4,7 +4,9 @@ from django.contrib.auth.models import User
 
 class Profile(models.Model):
     user = models.CharField(max_length=100)
-    myteam = 'SJSU'
+    mysport1 = models.CharField(max_length=100)
+    mysport2 = models.CharField(max_length=100)
+    myteam = models.CharField(max_length=100)
 
     def __str__(self):
     	return self.user
