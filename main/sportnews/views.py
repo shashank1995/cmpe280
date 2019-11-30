@@ -5,6 +5,7 @@ from django.http import HttpResponse,HttpResponseRedirect
 import requests
 from django.views.generic import TemplateView # Import TemplateView
 from datetime import date, timedelta
+from accounts.models import Profile
 import json
 
 # Add the two views we have been talking about  all this time :)
@@ -20,12 +21,18 @@ class LoginPageView(TemplateView):
 
 def sportnews(request):
 	if request.method == 'GET':
+		# get user info
+		current_user = request.user
+		current_profile = Profile.objects.get(user=str(current_user))
+		sport_type = current_profile.mysport1
+		print(sport_type)
+
 		# get today date
 		today = date.today()
 		# get yesterday time
 		yesterday = today - timedelta(days = 1)
 
-		sport_type = 'Soccer'
+		
 		sport_team = 'liverpool'
 
 		sportnews_url = ("http://eventregistry.org/api/v1/article/getArticles?"
@@ -50,11 +57,16 @@ def sportnews(request):
 		# get particular team new
 		response = requests.request("GET", url_2)
 		team_news = response.text
-		context = {'result' : result, 'team_news' : team_news}
+		context = {'sport_type' : sport_type, 'result' : result, 'team_news' : team_news}
 		return render(request, 'index.html', context)
 
 def test_results(request):
 	if request.method == 'GET':
+		current_user = request.user
+		print(current_user.id)
+		current_profile = Profile.objects.get(user='tp2')
+		print(current_profile.mysport1)
+
 		with open('static//test.json') as json_file:
 			data = json.load(json_file)
 		data = data['articles']['results']
