@@ -21,6 +21,7 @@ from django.contrib.staticfiles.urls import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    url(r'^', include('accounts.urls')),
     url(r'^', include('sportnews.urls')), # tell django to read urls.py in example app
     url(r'^', include('sportscores.urls')),
     path('accounts/', include('accounts.urls')), # new
