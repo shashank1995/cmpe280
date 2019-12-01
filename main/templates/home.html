@@ -1,0 +1,10 @@
+<!-- templates/home.html-->
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<p><a href="{% url 'signup' %}">Sign Up</a></p>
+<a href="{% url 'login' %}">Login</a>
+{% endblock %}
