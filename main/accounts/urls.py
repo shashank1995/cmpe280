@@ -8,4 +8,9 @@ from . import views
 urlpatterns = [
 	path('', TemplateView.as_view(template_name='home.html'), name='home'),
     path('signup/', views.SignUp.as_view(), name='signup'),
+    path('profile/', views.add_profile, name='profile'),
+    path('update/', views.update_profile, name='update'),
+    #path('main/', views.main_view, name='main'),
+    #path('profile/main/', views.main_view, name='main'),
 ]
+

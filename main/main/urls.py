@@ -18,6 +18,8 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.contrib.staticfiles.urls import static
+from sportnews.views import test_results
+from accounts.views import main_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,4 +28,5 @@ urlpatterns = [
     url(r'^', include('sportscores.urls')),
     path('accounts/', include('accounts.urls')), # new
     path('accounts/', include('django.contrib.auth.urls')),
+    path('redirect/', main_view),
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

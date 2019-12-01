@@ -1,13 +1,9 @@
 # account/forms.py
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+from .models import Profile
 
-class CustomUserCreationForm(UserCreationForm):
-
+class ProfileForm(forms.ModelForm):
     class Meta:
-        fields = ('team')
-
-class CustomUserChangeForm(UserChangeForm):
-
-    class Meta:
-        fields = ('team')
+        model = Profile
+        fields = ['mysport1', 'mysport2', 'myteam', 'language']
