@@ -1,10 +1,13 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Roboto+Slab" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title>Login</title>
 </head>
 
@@ -32,7 +35,7 @@
     <nav>
         <div id="logo-img">
             <a href="#">
-                <img src="img/logo.svg" alt="Sports Choice Logo">
+                <img src="{% static 'img/logo.svg' %}" alt="Sports Choice Logo">
             </a>
         </div>
         <div id="menu-icon">
@@ -64,19 +67,22 @@
     </div>
 
     <main>
-	
-	<div id="login-box">
+    
+    <div id="login-box">
       <div class="left-box">
         <h2>Sign Up</h2>
         <form method="post">
-            
-          <input type="text" name={{ field.label_tag }} placeholder="Username"/>
-          <input type="text" name="email" placeholder="Email"/>
-          <input type="password" name="password" placeholder="Password"/>
-        
-          <input type="password" name="password2" placeholder="Retype password"/>
-        
-          <input type="submit" name="signup-button" value="Submit"/>
+            {% csrf_token %}
+            {% for field in form %}
+            <p>
+                {{ field.label_tag }}<br>
+                {{ field }}
+                {% for error in field.errors %}
+                    <p style="color: red">{{ error }}</p>
+                {% endfor %}
+            </p>
+            {% endfor %}
+          <button type="submit" name="signup-button">Sign Up</button>
         </form>
         </div>
 
@@ -94,7 +100,7 @@
 
 </main>
 
-<script src="main.js"></script>
+<script src="{% static 'js/main.js' %}"></script>
 
 </body>
 </html>

@@ -10,6 +10,7 @@ from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.forms.models import model_to_dict
 from django.shortcuts import get_object_or_404
+from django.contrib.auth import login, authenticate
 
 
 # Add the two views we have been talking about  all this time :)
@@ -20,6 +21,20 @@ class SignUp(generic.CreateView):
 	form_class = UserCreationForm
 	success_url = reverse_lazy('login')
 	template_name = 'signup.html'
+
+def signup(request):
+	if request.method == 'POST':
+		form = UserCreationForm(request.POST)
+		if form.is_valid():
+			form.save()
+			username = form.cleaned_data.get('username')
+			raw_password = form.cleaned_data.get('password1')
+			user = authenticate(username=username, password=raw_password)
+			login(request, user)
+			return redirect('profile')
+	else:
+		form = UserCreationForm()
+	return render(request, 'login.html', {'form': form})
 
 def main_view(request):
 	return render(request, 'main.html')

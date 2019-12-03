@@ -1,6 +1,6 @@
-{% load staticfiles %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,12 +8,12 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
     crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Roboto+Slab" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link rel="stylesheet" href="{% static 'css/style.css' %}">
-  <title>Latest Sport News</title>
+  <link rel="stylesheet" href="style.css">
+  <title>News Feed</title>
 </head>
+
 <body>
-  <div id="slideout-menu">
+    <div id="slideout-menu">
         <ul>
             <li>
                 <a href="profile.html">My Profile</a>
@@ -36,7 +36,7 @@
     <nav>
         <div id="logo-img">
             <a href="#">
-                <img src="{% static 'img/logo.svg' %}" alt="Sports Choice Logo">
+                <img src="img/logo.svg" alt="Sports Choice Logo">
             </a>
         </div>
         <div id="menu-icon">
@@ -67,33 +67,102 @@
         <input type="text" placeholder="Search Here">
     </div>
 
-    <main>
+  <main>
     <h2 class="page-heading">Your News Feed</h2>
 
     <section>
-    {% for item in result %}
       <div class="card">
         <div class="card-image">
           <a href="#">
-            <img src="{{ item.image }}" alt="Card Image">
+            <img src="#" alt="Card Image">
           </a>
         </div>
 
         <div class="card-description">
-          <a href="{{ item.url }}">
-            <h3>{{ item.title }}</h3>
+          <a href="#">
+            <h3>News Headline Here</h3>
           </a>
           <div class="card-meta">
-            Posted by {{ item.source.title }}
-            <a href="{{ item.source.uri }}"></a>
+            Posted by *site name*
+            <a href="#"></a>
           </div>
           <p>
-            {{ item.body }}
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis, ullam facilis consequuntur eligendi sit accusamus tempora
+            cum distinctio pariatur ipsa quod, odit dolorum non vero recusandae? Corporis voluptatem optio nulla.
           </p>
-          <a href={{ item.url }} class="btn-readmore">Read more</a>
+          <a href="#" class="btn-readmore">Read more</a>
         </div>
       </div>
-    {% endfor %}
+
+      <div class="card">
+        <div class="card-image">
+          <a href="#">
+            <img src="#" alt="Card Image">
+          </a>
+        </div>
+
+        <div class="card-description">
+          <a href="#">
+            <h3>News Headline Here</h3>
+          </a>
+          <div class="card-meta">
+            Posted by *site name*
+            <a href="#"></a>
+          </div>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis, ullam facilis consequuntur eligendi sit accusamus tempora
+            cum distinctio pariatur ipsa quod, odit dolorum non vero recusandae? Corporis voluptatem optio nulla.
+          </p>
+          <a href="#" class="btn-readmore">Read more</a>
+        </div>
+      </div>
+	  
+	  <div class="card">
+        <div class="card-image">
+          <a href="#">
+            <img src="#" alt="Card Image">
+          </a>
+        </div>
+
+        <div class="card-description">
+          <a href="#">
+            <h3>News Headline Here</h3>
+          </a>
+          <div class="card-meta">
+            Posted by *site name*
+            <a href="#"></a>
+          </div>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis, ullam facilis consequuntur eligendi sit accusamus tempora
+            cum distinctio pariatur ipsa quod, odit dolorum non vero recusandae? Corporis voluptatem optio nulla.
+          </p>
+          <a href="#" class="btn-readmore">Read more</a>
+        </div>
+      </div>
+	  
+	  <div class="card">
+        <div class="card-image">
+          <a href="#">
+            <img src="#" alt="Card Image">
+          </a>
+        </div>
+
+        <div class="card-description">
+          <a href="#">
+            <h3>News Headline Here</h3>
+          </a>
+          <div class="card-meta">
+            Posted by *site name*
+            <a href="#"></a>
+          </div>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis, ullam facilis consequuntur eligendi sit accusamus tempora
+            cum distinctio pariatur ipsa quod, odit dolorum non vero recusandae? Corporis voluptatem optio nulla.
+          </p>
+          <a href="#" class="btn-readmore">Read more</a>
+        </div>
+      </div>
+	  
     </section>
 
     <div class="pagination">
@@ -154,6 +223,8 @@
         </footer>
 
   </main>
-  <script src="js/main.js"></script>
+
+  <script src="main.js"></script>
 </body>
+
 </html>
