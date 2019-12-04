@@ -470,6 +470,39 @@ footer #social-media-footer ul li:hover a .fa-github {
 .pricing-style1 .pricing-plan:hover .pricing-head span.value, 
 .pricing-style1 .pricing-plan.featured .pricing-head span.value {color: #fcd129;}
 
+.fav_title
+{
+	position:relative;
+	font-size:20px;
+	font-weight:bold;
+	margin: auto;
+	padding:10px;
+   
+}
+.fav_list1
+{
+    position: relative;
+    margin: auto;
+	font-size:16px;
+    width: 200px;	
+	padding:5px;
+    background: white;
+	 text-align:center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.fav_list2
+{
+    position: relative;
+    margin: auto;
+	font-size:16px;
+	width: 200px;
+	padding:5px;
+    background: white;
+	 text-align:center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
 #profile-box
 {
     position: relative;
