@@ -67,13 +67,13 @@
 	<main>
     <h2 class="page-heading">Profile Setup</h2>
 	
- <section id="contact" class="p-3">
+ <section id="prodile-setup" class="p-3">
      <div class="container">
 		<div class="row">
       
 			<div class="col-md-4">
 				<span>Name:</span>
-				<input type="text" name="name" required placeholder="Name">
+				<input class="profile-input" type="text" name="name" required placeholder="Name">
 		
 				<span>Age:</span>
 				<input type="text" name="age" required placeholder="Age">
@@ -83,12 +83,17 @@
 				<input type="text" name="age" required placeholder="Gender">
 				
 			</div>
-			 <div class="col-md-8">
-		
-			   <div class="row">
+				
+			   <div class="row row-centered">
+			    <div class="col-md-6">
+					<div class="fav_title"> Pick your </div><br>
+				</div>
+				<div class="col-md-6">
+				  <div class="row row-centered">
 					<div class="col-md-6">
-						<div class="fav_title"> Favorite Sports</div>					
-                        <select multiple class ="fav_list1" >
+					 
+					 <div class="fav_title"> Favorite Sports</div>					
+                        <select multiple class ="fav_list" >
 
 							<option value="football">Football</option>
 							<option value="soccer">Soccer</option>
@@ -99,19 +104,24 @@
 					
 					<div class="col-md-6">  
 						<div class="fav_title"> Favorite Teams</div>
-						<select class ="fav_list2" multiple>
+						<select class ="fav_list" multiple>
 							<option value="football">Warriors</option>
 							<option value="soccer">Arsenal</option>
 							<option value="cricket">Man Utd</option>	
 						</select>
 					</div>
-				</div>	
+				</div>	 
+				</div>
+				<div class="col-md-6">
+					  <div class="fav_title">
+						<br><br>
+						<input style="text-align:center;" type="submit" value="Save">	
+					</div>	
+				</div>
 			</div> 
-		</div> 
-		<br><br>			
-		<div class="col-md-4">
-			<input style="text-align:center;" type="submit" value="Save">	
-		</div>			
+		 
+					
+				
       </div>
     
     </section>
