@@ -24,7 +24,7 @@ def sportnews(request):
 		# get user info
 		current_user = request.user
 		current_profile = Profile.objects.get(user=current_user)
-		sport_type = current_profile.mysport1
+		sport_type = current_profile.mysport
 		sport_team = current_profile.myteam
 		print(sport_type)
 		print(sport_team)
@@ -66,7 +66,7 @@ def test_results(request):
 		current_user = request.user
 		print(current_user.id)
 		current_profile = Profile.objects.get(user=current_user)
-		print(current_profile.mysport1)
+		print(current_profile.mysport)
 
 		with open('static//test.json') as json_file:
 			data = json.load(json_file)
@@ -80,7 +80,7 @@ def test_results(request):
 		current_user = request.user
 		print(current_user.id)
 		current_profile = Profile.objects.get(user=current_user)
-		print(current_profile.mysport1)
+		print(current_profile.mysport)
 
 		with open('static//test.json') as json_file:
 			data = json.load(json_file)
