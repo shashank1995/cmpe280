@@ -1,28 +1,19 @@
+<!-- templates/profile.html-->
+{% extends 'base.html' %}
+
+{% block title %}Profile Setup{% endblock %}
 {% load staticfiles %}
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
-    crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Roboto+Slab" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link rel="stylesheet" href="{% static 'css/style.css' %}">
-  <title>Latest Sport News</title>
-</head>
-<body>
-  <div id="slideout-menu">
+{% block content %}
+	<div id="slideout-menu">
         <ul>
             <li>
-                <a href="{% url 'update' %}">My Profile</a>
-            </li>
-            <li>
-                <a href="scores.html">Live Scores</a>
+                <a href="index.html">Home</a>
             </li>
             <li>
                 <a href="about.html">About</a>
+            </li>
+            <li>
+                <a href="services.html">Services</a>
             </li>
             <li>
                 <a href="contact.html">Contact Us</a>
@@ -35,7 +26,7 @@
 
     <nav>
         <div id="logo-img">
-            <a href="{% url 'landing' %}">
+            <a href="#">
                 <img src="{% static 'img/logo.svg' %}" alt="Sports Choice Logo">
             </a>
         </div>
@@ -44,13 +35,13 @@
         </div>
         <ul>
             <li>
-                <a class="active" href="{% url 'update' %}">My Profile</a>
-            </li>
-            <li>
-                <a href="#">Live Scores</a>
+                <a class="active" href="index.html">Home</a>
             </li>
             <li>
                 <a href="about.html">About</a>
+            </li>
+            <li>
+                <a href="services.html">Services</a>
             </li>
             <li>
                 <a href="contact.html">Contact Us</a>
@@ -67,59 +58,82 @@
         <input type="text" placeholder="Search Here">
     </div>
 
-    <main>
-    <h2 class="page-heading">Your News Feed</h2>
+	<main>
+    <h2 class="page-heading">Profile Setup</h2>
+	
+ <section id="contact" class="p-3">
+     <div class="container">
+     	<form method="post">
+    		{% csrf_token %}
+		<div class="row">
+      		<!--
+			<div class="col-md-4">
+				
+				<span>Name:</span>
+				<input type="text" name="name" required placeholder="Name">
+		
+				<span>Age:</span>
+				<input type="text" name="age" required placeholder="Age">
 
-    <section>
-    {% for item in result %}
-      <div class="card">
-        <div class="card-image">
-          <a href="#">
-            <img src="{{ item.image }}" alt="Card Image">
-          </a>
-        </div>
+				
+				<span>Gender:</span>
+				<input type="text" name="age" required placeholder="Gender">
+			
+			</div>
+			-->
+			<!--
+			 <div class="col-md-8">
+		
+			   <div class="row">
+					<div class="col-md-6">
+						<div class="fav_title"> Favorite Sports</div>					
+                        <select multiple class ="fav_list1" >
 
-        <div class="card-description">
-          <a href="{{ item.url }}">
-            <h3>{{ item.title }}</h3>
-          </a>
-          <div class="card-meta">
-            Posted by {{ item.source.title }}
-            <a href="{{ item.source.uri }}"></a>
-          </div>
-          <p>
-            {{ item.body }}
-          </p>
-          <a href={{ item.url }} class="btn-readmore">Read more</a>
-        </div>
+							<option value="football">Football</option>
+							<option value="soccer">Soccer</option>
+							<option value="cricket">Cricket</option>
+							<option value="Baseball">Baseball</option>	
+						</select> 
+					</div>
+					
+					<div class="col-md-6">  
+						<div class="fav_title"> Favorite Teams</div>
+						<select class ="fav_list2" multiple>
+							<option value="football">Warriors</option>
+							<option value="soccer">Ravens</option>
+							<option value="cricket">Man Utd</option>	
+						</select>
+					</div>
+				</div>	
+			</div> 
+			-->
+			<table>{{ form.as_table }}</table>
+		</div> 
+		<br><br>			
+		<div class="col-md-4">
+			<button style="text-align:center;" type="submit">Save</button>
+			<!--<input style="text-align:center;" type="submit" value="Save">-->	
+		</div>
+		</form>			
       </div>
-    {% endfor %}
+    
     </section>
-
-    <div class="pagination">
-      <a href="#">Prev</a>
-      <a href="#">2</a>
-      <a href="#">3</a>
-      <a href="#">4</a>
-      <a href="#">Next</a>
-    </div>
-
-   <footer>
+	<footer>
             <div id="left-footer">
                 <h3>Quick Links</h3>
                 <p>
                     <ul>
                         <li>
-                          <a href="{% url 'landing' %}">Home</a>
+                            <a href="index.html">Home</a>
                         </li>
                         <li>
-                            <a href="{% url 'about' %}">About</a>
+                            <a href="about.html">About</a>
                         </li>
                         <li>
-                            <a href="{% url 'services' %}">Services</a>
+                            <a href="services.html">Services</a>
                         </li>
                         <li>
-                            <a href="{% url 'contact' %}">Contact Us</a>
+                            <a href="contact.html">Contact</a>
                         </li>
                         <li>
                                 <a href="#">Privacy Policy</a>
@@ -127,7 +141,7 @@
                     </ul>
                
             </div>
-
+	
             <div id="right-footer">
                 <h3>Follow us on</h3>
                 <div id="social-media-footer">
@@ -152,8 +166,10 @@
                 <p>This website was developed by Shashank, Tai and Varun</p>
             </div>
         </footer>
-
-  </main>
-  <script src="{% static 'js/main.js' %}"></script>
-</body>
-</html>
+        <!--
+    <h2>New Profile</h2>
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>-->
+    </form>
+{% endblock %}
