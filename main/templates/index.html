@@ -17,16 +17,16 @@
     <div id="slideout-menu">
         <ul>
             <li>
-                <a href="index.html">Home</a>
+              <a href="{% url 'landing' %}">Home</a>
             </li>
             <li>
-                <a href="about.html">About</a>
+                <a href="{% url 'about' %}">About</a>
             </li>
             <li>
-                <a href="sercvices.html">Services</a>
+                <a href="{% url 'services' %}">Services</a>
             </li>
             <li>
-                <a href="contact.html">Contact Us</a>
+                <a href="{% url 'contact' %}">Contact Us</a>
             </li>
             <li>
                     <input type="text" placeholder="Search Here">
@@ -45,16 +45,16 @@
         </div>
         <ul>
             <li>
-                <a class="active" href="index.html">Home</a>
+              <a href="{% url 'landing' %}">Home</a>
             </li>
             <li>
-                <a href="about.html">About</a>
+                <a href="{% url 'about' %}">About</a>
             </li>
             <li>
-                <a href="services.html">Services</a>
+                <a href="{% url 'services' %}">Services</a>
             </li>
             <li>
-                <a href="contact.html">Contact Us</a>
+                <a href="{% url 'contact' %}">Contact Us</a>
             </li>
             <li>
                     <div id="search-icon">
@@ -88,7 +88,7 @@
                 </div>
 
                 <div class="card-description">
-                    <a href="#">
+                    <a href="{% url 'scores' %}">
                         <h3>Live Scores</h3>
                     </a>
                     <p>
@@ -105,7 +105,7 @@
                 </div>
 
                 <div class="card-description">
-                    <a href="#">
+                    <a href="{% url 'sportnews' %}">
                         <h3>Latest News</h3>
                     </a>
                     <p>
@@ -132,16 +132,16 @@
                 <p>
                     <ul>
                         <li>
-                            <a href="index.html">Home</a>
+                          <a href="{% url 'landing' %}">Home</a>
                         </li>
                         <li>
-                            <a href="about.html">About</a>
+                            <a href="{% url 'about' %}">About</a>
                         </li>
                         <li>
-                            <a href="services.html">Services</a>
+                            <a href="{% url 'services' %}">Services</a>
                         </li>
                         <li>
-                            <a href="contact.html">Contact</a>
+                            <a href="{% url 'contact' %}">Contact Us</a>
                         </li>
                         <li>
                                 <a href="#">Privacy Policy</a>

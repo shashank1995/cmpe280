@@ -73,7 +73,7 @@ def add_profile(request):
 			return redirect('/landing/')
 	else:
 		form = ProfileForm()
-	return render(request, 'profile.html', {'form': form})
+	return render(request, 'setup.html', {'form': form})
 
 def update_profile(request):
 	user = User.objects.get(id=request.user.id)  
