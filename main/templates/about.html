@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
     crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Roboto+Slab" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
   <title>About</title>
 </head>
 
@@ -20,13 +20,13 @@
               <a href="index.html">Home</a>
           </li>
           <li>
-              <a href="about.html">About</a>
+              <a href="{% url 'about' %}">About</a>
           </li>
           <li>
-              <a href="services.html">Services</a>
+              <a href="{% url 'services' %}">Services</a>
           </li>
           <li>
-              <a href="contact.html">Contact Us</a>
+              <a href="{% url 'contact' %}">Contact Us</a>
           </li>
           <li>
               <input type="text" placeholder="Search Here">
@@ -37,7 +37,7 @@
   <nav>
       <div id="logo-img">
           <a href="#">
-              <img src="img/logo.svg" alt="Sports Choice Logo">
+              <img src="{% static 'img/logo.svg' %}" alt="Sports Choice Logo">
           </a>
       </div>
       <div id="menu-icon">
@@ -48,13 +48,13 @@
               <a href="index.html">Home</a>
           </li>
           <li>
-              <a href="about.html">About</a>
+              <a href="{% url 'about' %}">About</a>
           </li>
           <li>
-              <a href="services.html">Services</a>
+              <a href="{% url 'services' %}">Services</a>
           </li>
           <li>
-                <a href="contact.html">Contact Us</a>
+                <a href="{% url 'contact' %}">Contact Us</a>
             </li>
             <li>
                     <div id="search-icon">
@@ -75,7 +75,7 @@
       <section id="blogpost">
         <div class="card">
           <div class="card-image">
-            <img src="img/about.jpg" alt="About Image">
+            <img src="{% static 'img/about.jpg' %}" alt="About Image">
           </div>
           <div class="card-description">
             <p>With so many sites out there, it's hard to keep track of your favorite sports and teams. So we decided to help sports enthusiasts get what they deserve by creating a website that they feel is personal and can keep coming back to every day of the week.</p>
@@ -98,13 +98,13 @@
                                 <a href="index.html">Home</a>
                             </li>
                             <li>
-                                <a href="about.html">About</a>
+                                <a href="{% url 'about' %}">About</a>
                             </li>
                             <li>
-                                <a href="services.html">Services</a>
+                                <a href="{% url 'services' %}">Services</a>
                             </li>
                             <li>
-                                <a href="contact.html">Contact</a>
+                                <a href="{% url 'contact' %}">Contact Us</a>
                             </li>
                             <li>
                                     <a href="#">Privacy Policy</a>
@@ -140,7 +140,7 @@
 
   </main>
 
-  <script src="main.js"></script>
+  <script src="{% static 'js/main.js' %}"></script>
 </body>
 
 </html>
