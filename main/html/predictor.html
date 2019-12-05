@@ -1,0 +1,163 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Roboto+Slab" rel="stylesheet">
+  <link rel="stylesheet" href="/html/style.css">
+<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<title>Predictor</title>
+</head>
+<body>
+<div id="slideout-menu">
+        <ul>
+            <li>
+                <a href="newsfeed.html">Newsfeed</a>
+            </li>
+            <li>
+                <a href="livescore.html">Live Scores</a>
+            </li>
+            <li>
+                <a href="profile.html">My Profile</a>
+            </li>
+            <li>
+                <a href="#">Logout</a>
+            </li>
+            <li>
+                    <input type="text" placeholder="Search Here">
+                </li>
+        </ul>
+    </div>
+
+    <nav>
+        <div id="logo-img">
+            <a href="{% url 'landing' %}">
+                <img src="/media/logo.svg" alt="Sports Choice Logo">
+            </a>
+        </div>
+        <div id="menu-icon">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul>
+            <li>
+                <a class="active" href="newsfeed.html">Newsfeed</a>
+            </li>
+            <li>
+                <a href="livescore.html">Live Scores</a>
+            </li>
+            <li>
+                <a href="profile.html">My Profile</a>
+            </li>
+            <li>
+                <a href="#">Logout</a>
+            </li>
+            <li>
+                    <div id="search-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                </li>
+        </ul>
+    </nav>
+
+    <div id="searchbox">
+        <input type="text" placeholder="Search Here">
+    </div>
+
+    <main>
+            <h2 class="page-heading">Predictor</h2>
+
+<section>
+<div class="container">
+<form action="/predictor/" method="post" id="post-form">
+{% csrf_token %}
+<div class="row">
+<div class="input-field col s12 m6">
+    <select class="icons" id="team1" name="team1">
+      <option value="" disabled selected>Choose your option</option>
+      {% for a in all_teams %}
+      <option value="{{ a.teamName }}" data-icon="/media/{{ a.teamImage }}">{{ a.teamName }}</option>
+      {% endfor %}
+    </select>
+    <label>Select Team 1</label>
+  </div>
+  <div class="input-field col s12 m6">
+    <select class="icons" id="team2" name="team2">
+      <option value="" disabled selected>Choose your option</option>
+      {% for a in all_teams %}
+      <option value="{{ a.teamName }}" data-icon="/media/{{ a.teamImage }}">{{ a.teamName }}</option>
+      {% endfor %}
+    </select>
+    <label>Select Team 2</label>
+</div>
+<div class="center">
+<button class="btn waves-effect waves-light" type="submit" name="action">Submit
+<i class="material-icons right">send</i>
+</button>
+</div>
+</div>
+</form>
+</div>
+</section>
+<br><br><br> <br><br><br> <br><br><br>
+        <footer>
+            <div id="left-footer">
+                <h3>Quick Links</h3>
+                <p>
+                    <ul>
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="about.html">About</a>
+                        </li>
+                        <li>
+                            <a href="services.html">Services</a>
+                        </li>
+                        <li>
+                            <a href="contact.html">Contact</a>
+                        </li>
+                        <li>
+                                <a href="#">Privacy Policy</a>
+                            </li>
+                    </ul>
+               
+            </div>
+
+            <div id="right-footer">
+                <h3>Follow us on</h3>
+                <div id="social-media-footer">
+                    <ul>
+                        <li>
+                            <a href="https://www.facebook.com/">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <p>This website was developed by Shashank, Tai and Varun</p>
+            </div>
+        </footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems, {});
+});
+</script>
+</body>
+</html>
