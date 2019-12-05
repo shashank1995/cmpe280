@@ -25,7 +25,7 @@ SECRET_KEY = '0bm1(%(1w=1g@$i*yah37f5(d+u9wrq@p@0g)_=x3@a#diz0ls'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['taipham.pythonanywhere.com']
 
 
 # Application definition
@@ -146,7 +146,7 @@ STATIC_URL = '/static/'
 #)
 
 #STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
+STATIC_ROOT = '/home/taipham/taipham.pythonanywhere.com/static'
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
