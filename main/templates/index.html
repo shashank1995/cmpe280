@@ -71,7 +71,7 @@
     <div id="banner">
         <h1>Your Favorite Sports Content</h1>
         <h2>Delivered Right To You</h2>
-        <a href="login.html" class="btn-readmore">Join Us Now</a>
+        <a href="{% url 'signup' %}" class="btn-readmore">Join Us Now</a>
     </div>
 
     <main>
@@ -82,7 +82,7 @@
         <section>
             <div class="card">
                 <div class="card-image">
-                    <a href="#">
+                    <a href="{% url 'scores' %}">
                         <img src="{% static 'img/score_icon.svg' %}" alt="Card Image">
                     </a>
                 </div>
@@ -99,7 +99,7 @@
 
             <div class="card">
                 <div class="card-image">
-                    <a href="#">
+                    <a href="{% url 'sportnews' %}">
                         <img src="{% static 'img/Feed_Icon.svg' %}" alt="Card Image">
                     </a>
                 </div>
