@@ -26,6 +26,9 @@ class ContactPageView(TemplateView):
 class ServicesPageView(TemplateView):
 	template_name = 'services.html'
 
+class LandingPageView(TemplateView):
+	template_name = 'index.html'
+
 def signup(request):
 	if request.method == 'POST':
 		form = UserCreationForm(request.POST)
@@ -38,8 +41,9 @@ def signup(request):
 			return redirect('profile')
 	else:
 		form = UserCreationForm()
-	return render(request, 'login.html', {'form': form})
+	return render(request, 'signup.html', {'form': form})
 
+'''
 def login(request):
 	if request.method == 'POST':
 		form = UserCreationForm(request.POST)
@@ -53,7 +57,7 @@ def login(request):
 	else:
 		form = UserCreationForm()
 	return render(request, 'login2.html', {'form': form})
-	
+'''	
 def main_view(request):
 	return render(request, 'main.html')
 
@@ -66,7 +70,7 @@ def add_profile(request):
 			post.user = request.user
 
 			post.save()
-			return redirect('/redirect/')
+			return redirect('/landing/')
 	else:
 		form = ProfileForm()
 	return render(request, 'profile.html', {'form': form})
@@ -80,7 +84,7 @@ def update_profile(request):
 			post = form.save(commit=False)
 			post.user = request.user
 			post.save()
-			return redirect('/redirect/')
+			return redirect('/landing/')
 	else:
 		profile = Profile.objects.get(user=user)
 		form = ProfileForm(model_to_dict(profile))
