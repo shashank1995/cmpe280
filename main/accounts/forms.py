@@ -31,12 +31,20 @@ LANGUAGES = (
 	('en', 'English'),
     ('es', 'Spanish')
 )
+
+GENDERS = (
+    ('', 'Choose...'),
+    ('Male', 'Male'),
+    ('Female', 'Female'),
+    ('Other', 'Other')
+)
+
 class ProfileForm(forms.ModelForm):
-	
-	mysport = forms.ChoiceField(choices=SPORTS)
-	myteam = forms.ChoiceField(choices=TEAMS)
-	mylanguage = forms.ChoiceField(choices=LANGUAGES)
-	class Meta:
-		model = Profile
-		fields = ['mysport', 'myteam', 'mylanguage']
+    mysport = forms.ChoiceField(choices=SPORTS)
+    myteam = forms.ChoiceField(choices=TEAMS)
+    mylanguage = forms.ChoiceField(choices=LANGUAGES)
+    mygender = forms.ChoiceField(choices=GENDERS)
+    class Meta:
+        model = Profile
+        fields = ['myname', 'myage', 'mygender', 'mysport', 'myteam', 'mylanguage']
     

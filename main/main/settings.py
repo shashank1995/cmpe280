@@ -117,7 +117,7 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'fFPKSoyGFuLHiMbPgbMDyO1x'
 
 LOGIN_URL = '/auth/login/google-oauth2/'
 
-LOGIN_REDIRECT_URL = '/profile'
+LOGIN_REDIRECT_URL = '/sportnews'
 LOGOUT_REDIRECT_URL = '/'
 
 SOCIAL_AUTH_URL_NAMESPACE = 'social'

@@ -19,7 +19,7 @@ from django.urls import path
 from django.conf import settings
 from django.contrib.staticfiles.urls import static
 from sportnews.views import test_results
-from accounts.views import main_view
+from accounts.views import main_view, AboutPageView, ContactPageView, ServicesPageView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,4 +29,7 @@ urlpatterns = [
     path('accounts/', include('accounts.urls')), # new
     path('accounts/', include('django.contrib.auth.urls')),
     path('redirect/', main_view),
+    url(r'^about/$', AboutPageView.as_view(), name='about'),
+    url(r'^contact/$', ContactPageView.as_view(), name='contact'),
+    url(r'^services/$', ServicesPageView.as_view(), name='services'),
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

@@ -12,10 +12,6 @@ import json
 class HomePageView(TemplateView):
     template_name = "index.html"
 
-
-class AboutPageView(TemplateView):
-    template_name = "about.html"
-
 class LoginPageView(TemplateView):
     template_name = "login.html"
 

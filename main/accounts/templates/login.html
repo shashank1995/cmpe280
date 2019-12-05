@@ -18,7 +18,7 @@
                 <a href="index.html">Home</a>
             </li>
             <li>
-                <a href="about.html">About</a>
+                <a href="{% url 'about' %}">About</a>
             </li>
             <li>
                 <a href="sercvices.html">Services</a>
@@ -46,7 +46,7 @@
                 <a class="active" href="index.html">Home</a>
             </li>
             <li>
-                <a href="about.html">About</a>
+                <a href="{% url 'about' %}">About</a>
             </li>
             <li>
                 <a href="services.html">Services</a>
@@ -87,10 +87,11 @@
         </div>
 
         <div class="right-box">
-          <span class="signinwith">Sign in with<br/>Social Network     </span>
-        
+          <span class="signinwith">Sign in with<br/>Social Network</span>
+          <form>
+            <button type="submit" class="social twitter" formaction="{% url 'login' %}" >Log in with Username</button>
+          </form>
         <button class="social facebook">Log in with Facebook</button>    
-        <button class="social twitter">Log in with Email</button> 
         <button class="social google">Log in with Google</button> 
             
         

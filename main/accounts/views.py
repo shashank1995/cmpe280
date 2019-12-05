@@ -17,10 +17,14 @@ from django.contrib.auth import login, authenticate
 class HomePageView(TemplateView):
     template_name = "registration/login.html"
 
-class SignUp(generic.CreateView):
-	form_class = UserCreationForm
-	success_url = reverse_lazy('login')
-	template_name = 'signup.html'
+class AboutPageView(TemplateView):
+	template_name = 'about.html'
+
+class ContactPageView(TemplateView):
+	template_name = 'contact.html'
+
+class ServicesPageView(TemplateView):
+	template_name = 'services.html'
 
 def signup(request):
 	if request.method == 'POST':
@@ -36,6 +40,20 @@ def signup(request):
 		form = UserCreationForm()
 	return render(request, 'login.html', {'form': form})
 
+def login(request):
+	if request.method == 'POST':
+		form = UserCreationForm(request.POST)
+		if form.is_valid():
+			form.save()
+			username = form.cleaned_data.get('username')
+			raw_password = form.cleaned_data.get('password1')
+			user = authenticate(username=username, password=raw_password)
+			login(request, user)
+			return redirect('profile')
+	else:
+		form = UserCreationForm()
+	return render(request, 'login2.html', {'form': form})
+	
 def main_view(request):
 	return render(request, 'main.html')
 
