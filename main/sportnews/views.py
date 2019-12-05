@@ -22,6 +22,7 @@ def sportnews(request):
 		current_profile = Profile.objects.get(user=current_user)
 		sport_type = current_profile.mysport
 		sport_team = current_profile.myteam
+		language = current_profile.mylanguage
 		print(sport_type)
 		print(sport_team)
 
@@ -34,7 +35,7 @@ def sportnews(request):
 						"query=%7B%22%24query%22%3A%7B%22%24and%22%3A%5B%7B%22"
 						"categoryUri%22%3A%22dmoz%2FSports%2F" + sport_type + "%22%7D%2C%7B%22"
 						"dateStart%22%3A%22" + str(yesterday) + "%22%2C%22"
-						"dateEnd%22%3A%22" + str(today) + "%22%2C%22lang%22%3A%22eng%22%7D%5D%7D%7D&dataType=news&resultType=articles&articlesSortBy=date&articlesCount=10&articleBodyLen=-1")
+						"dateEnd%22%3A%22" + str(today) + "%22%2C%22lang%22%3A%22" + language + "%22%7D%5D%7D%7D&dataType=news&resultType=articles&articlesSortBy=date&articlesCount=10&articleBodyLen=-1")
 		
 		print(sportnews_url)
 		sportteam_url = ("https://newsapi.org/v2/top-headlines?q=" + sport_team.lower() + "&category=sport"

@@ -28,8 +28,8 @@ TEAMS = (
 
 LANGUAGES = (
     ('', 'Choose...'),
-	('en', 'English'),
-    ('es', 'Spanish')
+	('eng', 'English'),
+    ('spa', 'Spanish')
 )
 
 GENDERS = (
