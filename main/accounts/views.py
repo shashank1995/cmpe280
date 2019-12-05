@@ -70,7 +70,7 @@ def add_profile(request):
 			post.user = request.user
 
 			post.save()
-			return redirect('/landing/')
+			return redirect('/sportnews/')
 	else:
 		form = ProfileForm()
 	return render(request, 'setup.html', {'form': form})
@@ -84,7 +84,7 @@ def update_profile(request):
 			post = form.save(commit=False)
 			post.user = request.user
 			post.save()
-			return redirect('/landing/')
+			return redirect('/sportnews/')
 	else:
 		profile = Profile.objects.get(user=user)
 		myname = profile.myname
