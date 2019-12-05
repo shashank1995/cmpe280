@@ -87,5 +87,13 @@ def update_profile(request):
 			return redirect('/landing/')
 	else:
 		profile = Profile.objects.get(user=user)
+		myname = profile.myname
+		myage = profile.myage
+		mygender = profile.mygender
+		mysport = profile.mysport
+		myteam = profile.myteam
+		mylanguage = profile.mylanguage
 		form = ProfileForm(model_to_dict(profile))
+		context = {'myname' : myname, 'myage' : myage, 'mygender' : mygender, 'mysport' : mysport, 'myteam' : myteam, 'mylanguage' : mylanguage, 'form': form}
+		return render(request, 'profile.html', context)
 	return render(request, 'profile.html', {'form': form})

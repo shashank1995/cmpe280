@@ -1,0 +1,203 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Roboto+Slab" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <title>My Profile</title>
+</head>
+
+<body>
+{% block content %}
+<div id="slideout-menu">
+        <ul>
+            <li>
+                <a href="{% url 'sportnews' %}'">Newsfeed</a>
+            </li>
+            <li>
+                <a href="{% url 'scores' %}">Livescore</a>
+            </li>
+            <li>
+                <a href="{% url 'about' %}">About</a>
+            </li>
+            <li>
+                <a href="{% url 'contact' %}">Contact Us</a>
+            </li>
+            <li>
+                    <input type="text" placeholder="Search Here">
+                </li>
+        </ul>
+    </div>
+
+    <nav>
+        <div id="logo-img">
+            <a href="#">
+                <img src="{% static 'img/logo.svg' %}" alt="Sports Choice Logo">
+            </a>
+        </div>
+        <div id="menu-icon">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul>
+            <li>
+                <a href="{% url 'sportnews' %}'">Newsfeed</a>
+            </li>
+            <li>
+                <a href="{% url 'scores' %}">Livescore</a>
+            </li>
+            <li>
+                <a href="{% url 'about' %}">About</a>
+            </li>
+            <li>
+                <a href="{% url 'contact' %}">Contact Us</a>
+            </li>
+            <li>
+                    <div id="search-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                </li>
+        </ul>
+    </nav>
+
+    <div id="searchbox">
+        <input type="text" placeholder="Search Here">
+    </div>
+
+    <main>
+            <h2 class="page-heading">My Profile</h2>
+
+<div class="wrapper">
+    <div class="left">
+        <img src="{% static 'img/profile.png' %}" 
+        alt="user" width="100">
+        <h4>FName LName</h4>
+        {% if myname %}
+        <p>{{myname}}</p>
+        {% else %}
+        <p>My Name</p>
+        {% endif %}
+    </div>
+    <div class="right">
+        <div class="info">
+            <h3>Information</h3>
+            <div class="info_data">
+                 <div class="data">
+                    <h4>Email</h4>
+                    <p>name@email.com</p>
+                 </div>
+                 <div class="data">
+                   <h4>Phone</h4>
+                    <p>123-678-459</p>
+              </div>
+            </div>
+        </div>
+      
+      <div class="teams">
+            <h3>My Data</h3>
+            <div class="projects_data">
+                 <div class="data">
+                    <h4>Favorite Sports</h4>
+                    <p>{{mysport}}</p>
+                 </div>
+                 <div class="data">
+                   <h4>Favorite Teams</h4>
+                    <p>{{myteam}}</p>
+              </div>
+            </div>
+        </div>
+      
+        <div class="social_media">
+            <ul>
+              <li><a href="www.facebook.com"><i class="fab fa-facebook-f"></i></a></li>
+              <li><a href="www.twitter.com"><i class="fab fa-twitter"></i></a></li>
+              <li><a href="www.instagram.com"><i class="fab fa-instagram"></i></a></li>
+          </ul>
+      </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<footer>
+            <div id="left-footer">
+                <h3>Quick Links</h3>
+                <p>
+                    <ul>
+                        <li>
+                          <a href="{% url 'landing' %}">Home</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'about' %}">About</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'services' %}">Services</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'contact' %}">Contact Us</a>
+                        </li>
+                        <li>
+                                <a href="#">Privacy Policy</a>
+                            </li>
+                    </ul>
+               
+            </div>
+
+            <div id="right-footer">
+                <h3>Follow us on</h3>
+                <div id="social-media-footer">
+                    <ul>
+                        <li>
+                            <a href="https://www.facebook.com/">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <p>This website was developed by Shashank, Tai and Varun</p>
+            </div>
+        </footer>
+
+    </main>
+
+    <script src="{% static 'js/main.js' %}"></script>
+{% endblock %}
+</body>
+
+</html>
