@@ -31,8 +31,8 @@ def scores(request):
 			team['team1_url'] = team1.teamImage.url
 			team['team2_name'] = team2.teamName
 			team['team2_url'] = team2.teamImage.url
-			team['team1_score'] = random.randint(0,6)
-			team['team2_score'] = random.randint(0,6)
+			team['team1_score'] = random.randint(0,3)
+			team['team2_score'] = random.randint(0,3)
 			teams_to_be_displayed.append(team)
 		context = {'teams' : teams_to_be_displayed}
 		return render(request, 'sportscores/scores.html', context)
