@@ -20,9 +20,9 @@ def sportnews(request):
 		# get user info
 		current_user = request.user
 		current_profile = Profile.objects.get(user=current_user)
-		sport_type = current_profile.mysport
-		sport_team = current_profile.myteam
-		language = current_profile.mylanguage
+		sport_type = current_profile.Sport
+		sport_team = current_profile.Team
+		language = current_profile.Language
 		print(sport_type)
 		print(sport_team)
 

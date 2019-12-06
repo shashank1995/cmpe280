@@ -40,11 +40,11 @@ GENDERS = (
 )
 
 class ProfileForm(forms.ModelForm):
-    mysport = forms.ChoiceField(choices=SPORTS)
-    myteam = forms.ChoiceField(choices=TEAMS)
-    mylanguage = forms.ChoiceField(choices=LANGUAGES)
-    mygender = forms.ChoiceField(choices=GENDERS)
+    Sport = forms.ChoiceField(choices=SPORTS)
+    Team = forms.ChoiceField(choices=TEAMS)
+    Language = forms.ChoiceField(choices=LANGUAGES)
+    Gender = forms.ChoiceField(choices=GENDERS)
     class Meta:
         model = Profile
-        fields = ['myname', 'myage', 'mygender', 'mysport', 'myteam', 'mylanguage']
+        fields = ['Name', 'Age', 'Gender', 'Sport', 'Team', 'Language']
     
