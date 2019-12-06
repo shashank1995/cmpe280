@@ -97,13 +97,37 @@
     </section>
 
     <div class="pagination">
+    {% if result.has_other_pages %}
+      <ul class="pagination2">
+        {% if result.has_previous %}
+          <li><a href="?page={{ result.previous_page_number }}">&laquo;</a></li>
+        {% else %}
+          <li class="disabled"><span>&laquo;</span></li>
+        {% endif %}
+        {% for i in result.paginator.page_range %}
+          {% if result.number == i %}
+            <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+          {% else %}
+            <li><a href="?page={{ i }}">{{ i }}</a></li>
+          {% endif %}
+        {% endfor %}
+        {% if result.has_next %}
+          <li><a href="?page={{ result.next_page_number }}">&raquo;</a></li>
+        {% else %}
+          <li class="disabled"><span>&raquo;</span></li>
+        {% endif %}
+      </ul>
+    {% endif %}
+    </div>
+    <!--
+    <div class="pagination">
       <a href="#">Prev</a>
       <a href="#">2</a>
       <a href="#">3</a>
       <a href="#">4</a>
       <a href="#">Next</a>
     </div>
-
+    -->
    <footer>
             <div id="left-footer">
                 <h3>Quick Links</h3>
